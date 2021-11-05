@@ -23,17 +23,10 @@ Sample images<br>
 <img src="./output/2dce0990-6164-490f-920c-257445defaf1_0_2174.jpg"><br><br>
 <img src="./output/03bf57ff-f5cb-43e9-a179-2b870a758385_0_7559.jpg"><br><br>
 <img src="./output/4d31ad52-7383-41a4-bdba-3f99a7cd48f5_0_6793.jpg"><br><br>
-
 <img src="./output/052b72a0-c5e1-474b-8a24-a254d64f5771_0_427.jpg"><br><br>
-
 <img src="./output/60973d51-a092-4d44-b34c-6d281cff4332_0_9793.jpg"><br><br>
-
-
 <img src="./output/2b148be8-7a12-4227-870e-d16c1ecfc71e_0_1469.jpg"><br><br>
-
 <img src="./output/3b0e4103-6620-4971-9684-5b7e09d625d9_0_6847.jpg"><br><br>
-
 <img src="./output/43cc3dda-2a8e-4e99-8a3f-cf70e8726e1f_0_1856.jpg"><br><br>
-
 <img src="./output/b2500a69-ddfa-4303-9c04-8234469ad727_0_3063.jpg"><br><br>
 
