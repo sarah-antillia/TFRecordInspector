@@ -13,9 +13,7 @@ For example, @lease run the following command<br>
 Note:<br>
   To run this script, you have to install tensorflow 2 and related packages.<br>
 <br>
-The images in output_dir will b<img src="./output/"><br><br>
-<img src="./output/"><br><br>
-e shown as follows.<br>
+The images in output_dir will be shown as.<br>
 <img src="./asset/images_in_output_folder.png"><br>
 
 <br>
