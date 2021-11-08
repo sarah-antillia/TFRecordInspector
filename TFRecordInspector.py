@@ -192,12 +192,17 @@ class TFRecordInspector:
         
   
 #
-# python TFRecordInspector.py ./tfrecord/sample.tfrecord ./tfrecord/label_map.pbtxt ./output
-# python TFRecordInspector.py ./tfrecord/valid/valid.tfrecord ./label_map.pbtxt ./output/valid
+# python TFRecordInspector.py ./tfrecord/sample.tfrecord ./tfrecord/label_map.pbtxt ./output [True/False]
+# python TFRecordInspector.py ./tfrecord/valid/valid.tfrecord ./label_map.pbtxt ./output/valid [True/False]
 
 #
 if __name__ == '__main__':
   #tf.disable_eager_execution()
+  tfrecord_file     = ""
+  label_map_pbtxt   = ""
+  output_images_dir = ""
+  with_annotation   = True
+  
   try:
     if len(sys.argv) <4:
       raise Exception("Usage: python TFRecordInsepector.py ./tfrecord/sample.tfrecord ./tfrecord/label_map.pbtxt ./output")
@@ -205,21 +210,27 @@ if __name__ == '__main__':
       tfrecord_file     = sys.argv[1]
       label_map_pbtxt   = sys.argv[2]
       output_images_dir = sys.argv[3]
+    if len(sys.argv) == 5:
+      with_annotation =  eval(sys.argv[4])
 
-      if not os.path.exists(tfrecord_file):
+    if not os.path.exists(tfrecord_file):
         raise Exception(" Not found " + tfrecord_file)
 
-      if not os.path.exists(label_map_pbtxt):
+    if not os.path.exists(label_map_pbtxt):
         raise Exception(" Not found " + label_map_pbtxt)
 
-      if not os.path.exists(output_images_dir):
+    if not os.path.exists(output_images_dir):
         os.makedirs(output_images_dir)
+    print("=== tfrecord_file     {}".format(tfrecord_file))
+    print("=== label_map_pbtxt   {}".format(label_map_pbtxt))
+    print("=== output_images_dir {}".format(output_images_dir))
+    print("=== with_annotation   {}".format(with_annotation))
 
-      inspector = TFRecordInspector(tfrecord_file, 
+    inspector = TFRecordInspector(tfrecord_file, 
                                     label_map_pbtxt, 
                                     output_images_dir, 
-                                    with_annotation=True)
-      inspector.extract_images()
+                                    with_annotation=with_annotation)
+    inspector.extract_images()
       
   except Exception as ex:
     traceback.print_exc()

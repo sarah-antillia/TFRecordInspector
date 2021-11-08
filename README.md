@@ -7,7 +7,7 @@ and write the annotated images to the files.<br>
 For example, please run the following command<br>
 
 <pre>
-> python TFRecordInspector.py ./tfrecord/sample.tfrecord ./tfrecord/label_map.pbtxt ./output_dir
+> python TFRecordInspector.py ./tfrecord/sample.tfrecord ./tfrecord/label_map.pbtxt ./output
 </pre>
 
 Note:<br>
@@ -15,7 +15,7 @@ Note:<br>
 <br>
 By running this script, a lot of image files which are originally included in the tfrecord
 will be extracted and saved to the <b>output_dir</b> with annotations.<br>
-Also, an objects_count csv file generated in <b>ouput_dir/objects_count</b> folder.<br>
+Also, an objects_count csv file generated in <b>ouput/objects_count</b> folder.<br>
 
 The images in output_dir will be shown as.<br>
 <img src="./asset/images_in_output_folder.png"><br>
@@ -37,3 +37,9 @@ Sample images<br>
 Objects_count.csv <br>
 
 <a href="./output/objects_count/objects_count.csv">objects_count.csv</a>
+<br>
+
+<img src = "./readme_ref/" width="1024" height="auto"><br>
+You can see the imbalanced categories.<br>
+
+
