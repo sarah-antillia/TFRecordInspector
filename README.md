@@ -39,7 +39,7 @@ Objects_count.csv <br>
 <a href="./output/objects_count/objects_count.csv">objects_count.csv</a>
 <br>
 
-<img src = "./readme_ref/" width="1024" height="auto"><br>
+<img src = "./asset/objects_count.csv.png" width="1024" height="auto"><br>
 You can see the imbalanced categories.<br>
 
 
