@@ -13,6 +13,10 @@ For example, please run the following command<br>
 Note:<br>
   To run this script, you have to install tensorflow 2 and related packages.<br>
 <br>
+By running this script, a lot of image files which are originally included in the tfrecord
+will be extracted and saved to the <b>output_dir</b> with annotations.<br>
+Also, an objects_count csv file generated in <b>ouput_dir/objects_count</b> folder.<br>
+
 The images in output_dir will be shown as.<br>
 <img src="./asset/images_in_output_folder.png"><br>
 
@@ -30,3 +34,6 @@ Sample images<br>
 <img src="./output/43cc3dda-2a8e-4e99-8a3f-cf70e8726e1f_0_1856.jpg"><br><br>
 <img src="./output/b2500a69-ddfa-4303-9c04-8234469ad727_0_3063.jpg"><br><br>
 
+Objects_count.csv <br>
+
+<a href="./output/objects_count/objects_count.csv">objects_count.csv</a>
