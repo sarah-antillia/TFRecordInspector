@@ -192,7 +192,7 @@ class TFRecordInspector:
         
   
 #
-# python TFRecordInspector.py ./tfrecord/sample.tfrecord ./tfrecord/label_map.pbtxt ./output [True/False]
+# python TFRecordInspector.py ./tfrecord/sample.tfrecord ./tfrecord/label_map.pbtxt ./output   [True/False]
 # python TFRecordInspector.py ./tfrecord/valid/valid.tfrecord ./label_map.pbtxt ./output/valid [True/False]
 
 #
