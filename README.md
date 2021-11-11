@@ -4,7 +4,7 @@ This is a simple python <a href="./TFRecordInspector.py">TFRecordInspector</a> c
 It will parse an input tfrecord file, extract the images, labels, and bboxes from the tfrecord, 
 and write the annotated images to the files.<br>
 
-For example, please run the following command<br>
+For example, please run the following command.<br>
 
 <pre>
 > python TFRecordInspector.py ./tfrecord/sample.tfrecord ./tfrecord/label_map.pbtxt ./output
