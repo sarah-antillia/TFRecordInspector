@@ -19,7 +19,18 @@
 
 # LabelMapReader.py
 # 2021/11/05
-#
+
+#2021/11/12 toshiyuki.arai
+
+"""
+  Modified the following line in read method.
+            # The following line will cause an error if line contained the line 'name: "Maximum_Width_in_Meters",', 
+            # because "id" in "Width".
+            #if "id" in line:
+            if line.startswith("id:"):
+            
+
+"""
 
 import os
 import sys
@@ -38,10 +49,12 @@ class LabelMapReader:
     with open(label_map_file, "r") as f:
         for line in f:
             line.replace(" ", "")
-            if "id" in line:
+            #if "id" in line:
+            if "id:" in line:
                 id = int(line.split(":")[1].replace(",", "").strip() )
 
-            elif "name" in line:
+            #elif "name" in line:
+            elif "name:" in line:
                 name = line.split(":")[1].replace(",", "").strip()
                 name = name.replace("'", "").replace("\"", "")
 
