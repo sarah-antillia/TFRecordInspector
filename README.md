@@ -1,21 +1,20 @@
 # TFRecordInspector
 
 This is a simple python <a href="./TFRecordInspector.py">TFRecordInspector</a> class to inspect a tensorflow tfrecord.<br>
-This will parse an input tfrecord file, extract the images, labels, and bboxes from it, 
+It will parse an input tfrecord file, extract the images, labels, and bboxes from the tfrecord, 
 and write the annotated images to the files.<br>
 
-For example, please run the following command<br>
+For example, please run the following command.<br>
 
 <pre>
 > python TFRecordInspector.py ./tfrecord/sample.tfrecord ./tfrecord/label_map.pbtxt ./output
 </pre>
-
 Note:<br>
   To run this script, you have to install tensorflow 2 and related packages.<br>
 <br>
 By running this script, a lot of image files which are originally included in the tfrecord
-will be extracted and saved to the <b>output_dir</b> with annotations.<br>
-Also, an objects_count csv file generated in <b>ouput/objects_count</b> folder.<br>
+will be extracted and saved to the <b>output</b> folder with annotations.<br>
+Also, an <b>objects_count csv</b> file generated in <b>ouput/objects_count</b> folder.<br>
 
 The images in output_dir will be shown as.<br>
 <img src="./asset/images_in_output_folder.png"><br>
@@ -34,12 +33,7 @@ Sample images<br>
 <img src="./output/43cc3dda-2a8e-4e99-8a3f-cf70e8726e1f_0_1856.jpg"><br><br>
 <img src="./output/b2500a69-ddfa-4303-9c04-8234469ad727_0_3063.jpg"><br><br>
 
-Objects_count.csv <br>
-
 <a href="./output/objects_count/objects_count.csv">objects_count.csv</a>
-<br>
+<br>You can see the imbalanced categories in the following bar-graph.<br>
 
 <img src = "./asset/objects_count.csv.png" width="1024" height="auto"><br>
-You can see the imbalanced categories.<br>
-
-
