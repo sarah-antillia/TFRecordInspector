@@ -82,7 +82,20 @@ class TFRecordInspector:
       example = tf.io.parse_single_example(data_record, feature)
        
     except:
-      traceback.print_exc()
+      # 2021/11/18
+      # if 'image/filename' were missing.
+      feature = {
+                  'image/encoded': tf.io.FixedLenFeature([], tf.string),
+                  'image/object/class/label': tf.io.VarLenFeature(tf.int64),
+                  'image/object/bbox/xmin': tf.io.VarLenFeature(tf.float32),
+                  'image/object/bbox/ymin': tf.io.VarLenFeature(tf.float32),
+                  'image/object/bbox/xmax': tf.io.VarLenFeature(tf.float32),
+                  'image/object/bbox/ymax': tf.io.VarLenFeature(tf.float32),
+                  #'image/filename':         tf.io.FixedLenFeature([], tf.string)
+                 }
+      example = tf.io.parse_single_example(data_record, feature)
+
+      #traceback.print_exc()
       
     return example
 
@@ -134,6 +147,8 @@ class TFRecordInspector:
           filename = filename.strip('b').strip("'")
           #print("=== filename {}".format(filename))
         except:
+          #If 'image/filename' were missing. 
+          filename = str(im_ind) + ".jpg"
           traceback.print_exc()
 
         labels =  tf.sparse.to_dense( parsed_example['image/object/class/label'], default_value=0).numpy()
