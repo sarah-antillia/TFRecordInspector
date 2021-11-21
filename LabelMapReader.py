@@ -23,15 +23,21 @@
 #2021/11/12 toshiyuki.arai
 
 """
-  Modified the following line in read method.
-            # The following line will cause an error if line contained the line 'name: "Maximum_Width_in_Meters",', 
-            # because "id" in "Width".
-            #if "id" in line:
-            if "id:" in line:
+Modified the following line in read method.
+  # The following line will cause an error if line contained 'name: "Maximum_Width_in_Meters",', 
+  # because "id" in "Width".
+  #if "id" in line:
+  if "id:" in line:
             
 
-"""
 
+"""
+# 2021/11/19 Modified read method to parse input line
+# if line.startswith("id:"):
+#
+# elif line.startswith("name:"):
+#
+     
 import os
 import sys
 import traceback
@@ -49,19 +55,15 @@ class LabelMapReader:
     with open(label_map_file, "r") as f:
         for line in f:
             line.replace(" ", "")
-            #if "id" in line:
-            if "id:" in line:
+            line = line.strip()
+            if line.startswith("id:"):
                 id = int(line.split(":")[1].replace(",", "").strip() )
-
-            #elif "name" in line:
-            elif "name:" in line:
+            elif line.startswith("name:"):
                 name = line.split(":")[1].replace(",", "").strip()
                 name = name.replace("'", "").replace("\"", "")
-
             if id is not None and name is not None:
                 classes.append(name)
-                items[id]    = name
-                
+                items[id]    = name                
                 id   = None
                 name = None
 
@@ -82,9 +84,9 @@ if __name__ == "__main__":
      for i in items:
        print("i {} name  {}".format(i, items[i]) )
 
-     for i in range(20):
+     for i in range(len(classes)):
        try:
-         class_name = items[i]
+         class_name = classes[i]
          print("index {}  class {}".format(i, class_name))
        except:
          traceback.print_exc()
